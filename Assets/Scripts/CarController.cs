@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class CarController : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle;
     private float currentbreakForce;
     private bool isBreaking;
+
+    public Text changingText;
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
@@ -28,12 +32,22 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
+
+    public void UpdateSpeed()
+    {
+        float speed = GetComponent<Rigidbody>().velocity.magnitude*5f;
+        int rounded = (int)Math.Round(speed, 0);
+        changingText.text = rounded.ToString();
+    }
+
+
     private void FixedUpdate()
     {
         GetInput();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+        UpdateSpeed();
     }
 
 
