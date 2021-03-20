@@ -8,7 +8,13 @@ public class Sound {
 
     public int Level;
     public int LevelOrder;
+    [HideInInspector]
     public string name;
+
+    public Sound()
+    {
+        name = Level +"."+ LevelOrder;
+    }
     [HideInInspector]
     public AudioSource source;
 
