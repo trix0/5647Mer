@@ -427,8 +427,8 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efb5e7024a7ea6469a886e9316fb694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpeedText: {fileID: 0}
+  currentSpeedText: {fileID: 800130390}
   sounds:
   - Level: 1
     LevelOrder: 1
@@ -1437,6 +1437,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 3123ef9e3741d2b4480bc32f809bea4a, type: 3}
   soundPath: 
+  currentSongLevel: 1
+  currentSongOrder: 1
 --- !u!4 &1901985827
 Transform:
   m_ObjectHideFlags: 0
