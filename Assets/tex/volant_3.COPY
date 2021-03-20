@@ -1,0 +1,21 @@
+Begin Object Class=/Script/Engine.Material Name="volant_3"
+   Begin Object Class=/Script/Engine.MaterialExpressionVectorParameter Name="MaterialExpressionVectorParameter_14"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_30"
+   End Object
+   Begin Object Name="MaterialExpressionVectorParameter_14"
+      DefaultValue=(R=0.500000,G=0.500000,B=0.500000,A=0.000000)
+      ExpressionGUID=F7A73CB64C85954AC0C179907F8B4C8F
+      MaterialExpressionGuid=585A3F6E49EA42786F8D35BA72491648
+      Material=Material'"volant_3"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_30"
+   End Object
+   BaseColor=(Expression=MaterialExpressionVectorParameter'"MaterialExpressionVectorParameter_14"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   Expressions(0)=MaterialExpressionVectorParameter'"MaterialExpressionVectorParameter_14"'
+   bCanMaskedBeAssumedOpaque=True
+   StateId=488781B6486C61031605A9812C4E9D90
+   CachedExpressionData=(Parameters=(RuntimeEntries[1]=(NameHashes=(10371715421228879687),ParameterInfos=((Name="Param")),ExpressionGuids=(F7A73CB64C85954AC0C179907F8B4C8F),Overrides=(False)),VectorValues=((R=0.500000,G=0.500000,B=0.500000,A=0.000000)),VectorChannelNameValues=(()),VectorUsedAsChannelMaskValues=(False)),QualityLevelsUsed=(False,False,False,False))
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_30"'
+   LightingGuid=C4A4AB9B4892657D4D3011B2A5611477
+End Object

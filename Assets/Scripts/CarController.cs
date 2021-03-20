@@ -9,6 +9,7 @@ public class CarController : MonoBehaviour
 {
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
+   
 
     private float horizontalInput;
     private float verticalInput;
@@ -31,6 +32,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontRightWheeTransform;
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
+
+    [SerializeField]  public Transform Steering;
 
 
     public void UpdateSpeed()
@@ -76,7 +79,16 @@ public class CarController : MonoBehaviour
 
     private void HandleSteering()
     {
+
         currentSteerAngle = maxSteerAngle * horizontalInput;
+        //var rotation = Vector3.up * 0; ;
+
+        var rotation = Vector3.up * 0;
+        Steering.Rotate(rotation, Space.Self);
+        rotation.y = currentSteerAngle;
+
+        Steering.Rotate(rotation, Space.Self);
+        //Steering.rotation = Quaternion.AngleAxis(currentSteerAngle, Vector3.up);
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
@@ -96,5 +108,29 @@ public class CarController : MonoBehaviour
 ;       wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+
+
+    float maxTurnAngle = 80;
+
+    void Update()
+    {
+
+        float turnAngle = this.transform.eulerAngles.y + Input.GetAxisRaw("Horizontal");
+
+        if (turnAngle > 90)
+        {
+            turnAngle = 90;
+        }
+        else if (turnAngle < -90)
+        {
+            turnAngle = -90;
+        }
+
+
+        // Steering.localRotation = Vector3.back * Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxTurnAngle, maxTurnAngle);
+
+        Steering.localRotation= Quaternion.Euler(Steering.rotation.x, Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxTurnAngle, maxTurnAngle), Steering.rotation.z);
+
     }
 }
